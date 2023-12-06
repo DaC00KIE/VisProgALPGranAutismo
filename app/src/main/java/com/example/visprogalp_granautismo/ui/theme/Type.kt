@@ -21,7 +21,8 @@ val Typography = Typography(
         fontWeight = FontWeight.Normal,
         fontSize = 22.sp,
         lineHeight = 28.sp,
-        letterSpacing = 0.sp
+        letterSpacing = 0.sp,
+        ssd = 0.sp
     ),
     labelSmall = TextStyle(
         fontFamily = FontFamily.Default,
