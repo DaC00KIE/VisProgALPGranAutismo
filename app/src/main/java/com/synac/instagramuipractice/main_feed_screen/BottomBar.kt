@@ -15,9 +15,12 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
+import com.synac.instagramuipractice.main_feed_screen.PostWidget
+import com.synac.instagramuipractice.model.User
 
 
 @Composable
@@ -87,4 +90,9 @@ fun BottomBar() {
             }
         )
     }
+}
+@Preview(showBackground = true)
+@Composable
+fun BottomBarPrev() {
+    BottomBar()
 }

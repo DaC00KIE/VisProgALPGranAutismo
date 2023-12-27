@@ -3,6 +3,7 @@ package com.synac.instagramuipractice.main_feed_screen
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.shape.CircleShape
+import androidx.compose.foundation.shape.RoundedCornerShape
 
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
@@ -82,11 +83,15 @@ fun PostWidget(
 
         }
         Image(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp) // Adjust the padding as needed
+                .clip(RoundedCornerShape(16.dp)), // Adjust the corner radius as needed
             painter = user.postPic,
             contentDescription = "Post Picture",
             contentScale = ContentScale.FillWidth
         )
+
         Row(
             modifier = Modifier.fillMaxWidth(),
             horizontalArrangement = Arrangement.SpaceBetween
@@ -94,57 +99,60 @@ fun PostWidget(
             Row(
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(
-                        painter = painterResource(R.drawable.ic_like_outline),
-                        contentDescription = "Like Icon",
-                        tint = Color.Black,
-                        modifier = Modifier.size(25.dp)
-                    )
-                }
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(
-                        painter = painterResource(R.drawable.ic_comment),
-                        contentDescription = "Like Icon",
-                        tint = Color.Black,
-                        modifier = Modifier.size(30.dp)
-                    )
-                }
-                IconButton(onClick = { /*TODO*/ }) {
-                    Icon(
-                        painter = painterResource(R.drawable.ic_send),
-                        contentDescription = "Like Icon",
-                        tint = Color.Black,
-                        modifier = Modifier.size(25.dp)
-                    )
-                }
+
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_like_outline),
+                            contentDescription = "Like Icon",
+                            tint = Color.Black,
+                            modifier = Modifier.size(25.dp)
+                        )
+                    }
+                    IconButton(onClick = { /*TODO*/ }) {
+                        Icon(
+                            painter = painterResource(R.drawable.ic_comment),
+                            contentDescription = "Like Icon",
+                            tint = Color.Black,
+                            modifier = Modifier.size(30.dp)
+                        )
+                    }
+
+
+            }
+            IconButton(onClick = { /*TODO*/ }) {
+                Icon(
+                    painter = painterResource(R.drawable.ic_send),
+                    contentDescription = "Like Icon",
+                    tint = Color.Black,
+                    modifier = Modifier.size(25.dp)
+                )
             }
 
         }
-        Column(
-            modifier = Modifier.padding(horizontal = 10.dp)
-        ) {
-            Text(
-                text = "${user.likeCount} likes"
-            )
-            Text(
-                text = buildAnnotatedString {
-                    append(
-                        AnnotatedString(
-                            text = "${user.username}  ",
-                            spanStyle = SpanStyle(fontWeight = FontWeight.Bold)
-                        )
-                    )
-                    append(user.caption)
-                }
-            )
-            Spacer(modifier = Modifier.height(5.dp))
-            Text(
-                text = "View all ${user.commentCount} comments",
-                color = Color.DarkGray,
-                fontSize = 13.sp
-            )
-        }
+//        Column(
+//            modifier = Modifier.padding(horizontal = 10.dp)
+//        ) {
+//            Text(
+//                text = "${user.likeCount} likes"
+//            )
+//            Text(
+//                text = buildAnnotatedString {
+//                    append(
+//                        AnnotatedString(
+//                            text = "${user.username}  ",
+//                            spanStyle = SpanStyle(fontWeight = FontWeight.Bold)
+//                        )
+//                    )
+//                    append(user.caption)
+//                }
+//            )
+//            Spacer(modifier = Modifier.height(5.dp))
+//            Text(
+//                text = "View all ${user.commentCount} comments",
+//                color = Color.DarkGray,
+//                fontSize = 13.sp
+//            )
+//        }
     }
 }
 

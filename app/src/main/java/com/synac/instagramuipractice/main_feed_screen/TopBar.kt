@@ -2,6 +2,9 @@
 
 package com.synac.instagramuipractice.main_feed_screen
 
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.layout.offset
 import androidx.compose.foundation.layout.size
 import androidx.compose.material3.ExperimentalMaterial3Api
@@ -31,33 +34,42 @@ fun TopBar() {
 
     TopAppBar(
         title = {
-            Text(
-                modifier = Modifier.offset(y = 5.dp),
-                text = "Instagram",
-                fontFamily = instagramTitleFont,
-                fontSize = 35.sp,
-                color = Color.Black
-            )
+            Row(
+                modifier = Modifier
+                    .fillMaxWidth(),
+                horizontalArrangement = Arrangement.SpaceBetween
+            ){
+                Text(
+                    modifier = Modifier.offset(y = 5.dp),
+                    text = "",
+                    fontFamily = instagramTitleFont,
+                    fontSize = 35.sp,
+                    color = Color.Black
+
+                )
+                Text(
+                    modifier = Modifier.offset(y = 5.dp),
+                    text = "Instagram",
+                    fontFamily = instagramTitleFont,
+                    fontSize = 35.sp,
+                    color = Color.Black
+
+                )
+                IconButton(onClick = { /*TODO*/ }) {
+                    Icon(
+                        painter = painterResource(id = R.drawable.ic_send),
+                        contentDescription = "Send Message",
+                        tint = Color.Black,
+                        modifier = Modifier.size(25.dp)
+                    )
+                }
+            }
         },
         //colors = White,
 
         actions = {
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_add),
-                    contentDescription = "Add Post",
-                    tint = Color.Black,
-                    modifier = Modifier.size(25.dp)
-                )
-            }
-            IconButton(onClick = { /*TODO*/ }) {
-                Icon(
-                    painter = painterResource(id = R.drawable.ic_send),
-                    contentDescription = "Send Message",
-                    tint = Color.Black,
-                    modifier = Modifier.size(25.dp)
-                )
-            }
+
+
         }
     )
 }
