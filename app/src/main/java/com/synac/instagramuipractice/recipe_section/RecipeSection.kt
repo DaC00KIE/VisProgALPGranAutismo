@@ -62,6 +62,8 @@ fun RecipeSection(
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
             Row(
+                modifier = Modifier
+                    .padding(start = 12.dp, end = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
@@ -135,14 +137,14 @@ fun RecipeSection(
         )
 
         Row(
-            modifier = Modifier.fillMaxWidth(),
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(end = 20.dp),
             horizontalArrangement = Arrangement.SpaceBetween
         ) {
-            Row(
-                verticalAlignment = Alignment.CenterVertically
-            ) {
-                // Like IconButton with Like Count
                 Row(
+                    modifier = Modifier
+                        .padding(start = 20.dp, end = 20.dp),
                     verticalAlignment = Alignment.CenterVertically
                 ) {
                     IconButton(onClick = { /* TODO: Handle like button click */ }) {
@@ -160,12 +162,10 @@ fun RecipeSection(
                         fontWeight = FontWeight.Bold,
                         modifier = Modifier.padding(start = 4.dp)
                     )
-                }
 
-                // Comment IconButton with Comment Count
                 Row(
                     verticalAlignment = Alignment.CenterVertically,
-                    modifier = Modifier.padding(start = 16.dp) // Adjust the padding as needed
+                    modifier = Modifier.padding(end = 16.dp) // Adjust the padding as needed
                 ) {
                     IconButton(onClick = { /*TODO: Handle comment button click */ }) {
                         Icon(
@@ -193,7 +193,10 @@ fun RecipeSection(
                 )
             }
         }
-        Row {
+        Row (
+            modifier = Modifier
+                .padding(start = 25.dp, end = 25.dp)
+        ){
             Text(
                 text = user.username,
                 color = Purple,
