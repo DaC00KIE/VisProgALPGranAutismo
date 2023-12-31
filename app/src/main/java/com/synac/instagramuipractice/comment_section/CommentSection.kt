@@ -149,13 +149,17 @@ fun CommentSection(user: User) {
 @Preview(showBackground = true)
 @Composable
 fun CommentSectionPreview() {
-    CommentSection(user = User(
-        profilePic = painterResource(R.drawable.user1),
-        username = "Cranberry Pie",
-        location = "Jakarta, Indonesia",
-        postPic = painterResource(R.drawable.post1),
-        likeCount = 168,
-        caption = "Afternoon Tea with some Lovely Muffin. Comment if you want to know more about the other dessert recipe. I can also give you the full courses about baking.",
-        commentCount = 15
-    ))
+    Column {
+
+        CommentSection(user = User(
+            profilePic = painterResource(R.drawable.user1),
+            username = "Cranberry Pie",
+            location = "Jakarta, Indonesia",
+            postPic = painterResource(R.drawable.post1),
+            likeCount = 168,
+            caption = "Afternoon Tea with some Lovely Muffin. Comment if you want to know more about the other dessert recipe. I can also give you the full courses about baking.",
+            commentCount = 15,
+            commentTime = "1h ago"
+        ))
+    }
 }

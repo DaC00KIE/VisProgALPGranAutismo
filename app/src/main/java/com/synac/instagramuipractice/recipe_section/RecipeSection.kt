@@ -227,6 +227,7 @@ fun RecipeSectionPreview() {
         postPic = painterResource(R.drawable.post1),
         likeCount = 168,
         caption = "Afternoon Tea with some Lovely Muffin. Comment if you want to know more about the other dessert recipe. I can also give you the full courses about baking.",
-        commentCount = 15
+        commentCount = 15,
+        commentTime = "1h ago"
     ))
 }

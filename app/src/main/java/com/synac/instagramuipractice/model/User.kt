@@ -9,5 +9,6 @@ data class User(
     val postPic: Painter,
     val likeCount: Int,
     val caption: String,
-    val commentCount: Int
+    val commentCount: Int,
+    val commentTime: String
 )
