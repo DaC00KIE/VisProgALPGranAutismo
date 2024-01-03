@@ -91,7 +91,7 @@ fun Header() {
         modifier = Modifier
             .fillMaxWidth()
             .background(Color.White)
-            .padding(vertical = 0.dp),
+            .padding(vertical = 1.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(

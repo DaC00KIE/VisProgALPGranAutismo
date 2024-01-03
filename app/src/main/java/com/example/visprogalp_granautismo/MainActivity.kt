@@ -12,7 +12,10 @@ import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.navigation.MainNavigation
+import com.example.visprogalp_granautismo.screens.ChatScreen
+import com.example.visprogalp_granautismo.screens.HomeScreen
 import com.example.visprogalp_granautismo.ui.theme.VisProgALPGranAutismoTheme
 
 class MainActivity : ComponentActivity() {
@@ -26,7 +29,6 @@ class MainActivity : ComponentActivity() {
                     modifier = Modifier.fillMaxSize(),
                     color = MaterialTheme.colorScheme.background
                 ) {
-                    MainNavigation()
                 }
             }
         }
@@ -45,6 +47,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     VisProgALPGranAutismoTheme {
-        Greeting("Android")
+        ChatScreen(rememberNavController())
     }
 }
