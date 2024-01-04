@@ -25,6 +25,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
 
+@OptIn(ExperimentalMaterial3Api::class)
 @Composable
 fun TopBar() {
 
@@ -49,7 +50,7 @@ fun TopBar() {
                 )
                 Text(
                     modifier = Modifier.offset(y = 5.dp),
-                    text = "Instagram",
+                    text = "Instayum",
                     fontFamily = instagramTitleFont,
                     fontSize = 35.sp,
                     color = Color.Black

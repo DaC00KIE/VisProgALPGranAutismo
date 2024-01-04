@@ -1,30 +1,43 @@
 package com.synac.instagramuipractice.main_feed_screen
 
-import androidx.compose.foundation.layout.Spacer
-import androidx.compose.foundation.layout.height
-import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.ExperimentalFoundationApi
+import androidx.compose.foundation.background
+import androidx.compose.foundation.layout.*
 import androidx.compose.foundation.lazy.LazyColumn
-import androidx.compose.foundation.lazy.LazyRow
-import androidx.compose.foundation.lazy.items
+import androidx.compose.foundation.lazy.grid.GridCells
+import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
+import androidx.compose.foundation.lazy.grid.items
+import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.filled.Search
 import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
+import androidx.compose.material3.Icon
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
-
+import androidx.compose.material3.Surface
+import androidx.compose.material3.Text
+import androidx.compose.material3.TextField
 import androidx.compose.runtime.Composable
+import androidx.compose.runtime.getValue
+import androidx.compose.runtime.mutableStateOf
+import androidx.compose.runtime.remember
+import androidx.compose.runtime.setValue
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
-
 import com.synac.instagramuipractice.model.User
 
-@OptIn(ExperimentalMaterial3Api::class)
+@OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
 @Preview(showBackground = true)
 @Composable
-fun MainFeedScreen() {
+fun Explore() {
+    var searchQuery by remember { mutableStateOf("") }
 
     val users = listOf(
         User(
@@ -45,6 +58,7 @@ fun MainFeedScreen() {
             caption = "Hey Guy's, checkout my new post",
             commentCount = 15
         ),
+
         User(
             profilePic = painterResource(R.drawable.bran_stark),
             username = "bran_stark",
@@ -102,27 +116,74 @@ fun MainFeedScreen() {
     )
 
     Scaffold(
-        topBar = { TopBar() },
+        topBar = {
+            TopBar(searchQuery = searchQuery) {
+                searchQuery = it
+            }
+        },
         containerColor = Color.White,
         bottomBar = { BottomBar() }
     ) { innerPadding ->
-        LazyColumn(
+        Column(
             modifier = Modifier.padding(innerPadding)
         ) {
-            item {
-                LazyRow {
-                    items(users) { user ->
-
-                    }
+            Spacer(modifier = Modifier.height(8.dp))
+            LazyVerticalGrid(
+                GridCells.Fixed(2),
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(MaterialTheme.colorScheme.background)
+                    .padding(8.dp)
+            ) {
+                items(users) { user ->
+                    Spacer(modifier = Modifier.height(8.dp))
+                    PostWidget2(user = user)
+//                    Divider()
                 }
-            }
-            item { Divider() }
-            items(users) { user ->
-                PostWidget(user = user)
-                Spacer(modifier = Modifier.height(15.dp))
             }
         }
     }
 }
 
+@OptIn(ExperimentalMaterial3Api::class)
+@Composable
+fun TopBar(searchQuery: String, onSearchQueryChange: (String) -> Unit) {
+    Surface(
+        modifier = Modifier
+            .fillMaxWidth()
+            .padding(8.dp)
+    ) {
+        Column(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(8.dp)
+        ) {
+            TextField(
+                value = searchQuery,
+                onValueChange = { onSearchQueryChange(it) },
+                modifier = Modifier
+                    .fillMaxWidth()
+                    .background(MaterialTheme.colorScheme.surface)
+                    .padding(8.dp)
+                    .clip(RoundedCornerShape(16.dp))
+                    .background(MaterialTheme.colorScheme.primary),
 
+                leadingIcon = {
+                    Icon(
+                        imageVector = Icons.Default.Search,
+                        contentDescription = "Search Icon"
+                    )
+                },
+                placeholder = {
+                    Text(text = "Search for captions...")
+                }
+            )
+        }
+    }
+}
+
+@Preview(showBackground = true)
+@Composable
+fun ExplorePreview() {
+    Explore()
+}
