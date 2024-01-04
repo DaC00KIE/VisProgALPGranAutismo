@@ -106,13 +106,12 @@ fun RecipeSection(
                         modifier = Modifier.size(25.dp)
                     )
                 }
-                // IconButton for More Options Icon
                 IconButton(onClick = { /* TODO */ }) {
                     Icon(
                         painter = painterResource(R.drawable.ic_more),
                         tint = LightPurple,
                         contentDescription = "More Options",
-                        modifier = Modifier.rotate(90f) // Rotate only the Icon by 90 degrees
+                        modifier = Modifier.rotate(90f)
                     )
                 }
             }
@@ -121,8 +120,8 @@ fun RecipeSection(
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(25.dp) // Adjust the padding as needed
-                .clip(RoundedCornerShape(20.dp)), // Adjust the corner radius as needed
+                .padding(25.dp)
+                .clip(RoundedCornerShape(20.dp)),
             painter = user.postPic,
             contentDescription = "Post Picture",
             contentScale = ContentScale.FillWidth

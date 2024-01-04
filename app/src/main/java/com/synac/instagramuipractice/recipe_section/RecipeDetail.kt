@@ -33,13 +33,10 @@ fun RecipeDetail(user: User) {
     Column(
         modifier = Modifier
             .fillMaxWidth()
+            .padding(35.dp, 10.dp, 35.dp, 35.dp)
+            .clip(shape = RoundedCornerShape(20.dp))
+            .background( Color(0x80F7D2D6))
     ) {
-        Card(
-            modifier = Modifier
-                .padding(start = 35.dp, bottom = 35.dp, end = 35.dp, top = 10.dp)
-                .clip(shape = RoundedCornerShape(20.dp))
-                .background(LightPinkBG)
-        ) {
             Column {
                 Text(
                     text = "Lovely Muffin",
@@ -100,7 +97,6 @@ fun RecipeDetail(user: User) {
                     ),
                     modifier = Modifier.padding(end = 30.dp, start = 30.dp, bottom = 30.dp)
                 )
-            }
         }
     }
 }
