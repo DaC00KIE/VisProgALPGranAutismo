@@ -57,6 +57,35 @@ fun CreatePostFeature(categoryMeasurement: List<String>) {
                 .fillMaxWidth()
                 .padding(end = 35.dp)
         )
+        Button(
+            onClick = { /* Handle button click here */ },
+            modifier = Modifier
+                .padding(top = 20.dp, start = 100.dp, end = 100.dp, bottom = 20.dp)
+                .fillMaxWidth() // Adjusted to fill the width
+                .height(50.dp)
+                .background(
+                    color = Color.Transparent,
+                    shape = RoundedCornerShape(size = 35.dp)
+                )
+        ) {
+            Text(
+                text = "Select Image",
+                style = TextStyle(
+                    fontSize = 12.sp,
+                    fontFamily = FontFamily(Font(R.font.raleway_bold)),
+                    fontWeight = FontWeight(800),
+                    textAlign = TextAlign.Center,
+                ),
+            )
+        }
+        Spacer(modifier = Modifier.height(14.dp))
+        Divider(
+            color = Color(0xFF9C9C9C),
+            thickness = 0.2.dp,
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(end = 35.dp)
+        )
         Spacer(modifier = Modifier.height(20.dp))
         Text(
             text = "Add Ingredients",

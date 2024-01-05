@@ -34,7 +34,7 @@ fun WriteComment() {
         Row(
             modifier = Modifier
                 .fillMaxWidth()
-                .height(70.dp)
+                .height(80.dp)
                 .padding(10.dp)
                 .background(color = Color(0xFF968BBD), shape = RoundedCornerShape(size = 10.dp)),
             verticalAlignment = Alignment.CenterVertically,
@@ -55,10 +55,12 @@ fun WriteComment() {
             )
             IconButton(onClick = { /* TODO */ }) {
                 Icon(
-                    painter = painterResource(id = R.drawable.send),
+                    painter = painterResource(id = R.drawable.send2),
                     contentDescription = "Send Icon",
+                    tint = Color.White,
                     modifier = Modifier
-                        .size(85.dp)
+                        .padding(end = 10.dp)
+                        .size(65.dp)
                         .scale(1f)
                 )
             }
