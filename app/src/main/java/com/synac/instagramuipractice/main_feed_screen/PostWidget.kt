@@ -18,13 +18,18 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.AnnotatedString
 import androidx.compose.ui.text.SpanStyle
+import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.buildAnnotatedString
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
+import com.example.visprogalp_granautismo.ui.theme.LightPurple
+import com.example.visprogalp_granautismo.ui.theme.Purple
 import com.synac.instagramuipractice.model.User
+import com.synac.instagramuipractice.recipe_section.ralewayBold
+import com.synac.instagramuipractice.recipe_section.ralewayRegular
 
 @Composable
 fun PostWidget(
@@ -54,12 +59,21 @@ fun PostWidget(
                 Column {
                     Text(
                         text = user.username,
-                        fontWeight = FontWeight.Bold,
-                        fontSize = 18.sp
+                        fontFamily = ralewayBold,
+                        color = Purple,
+                        fontSize = 14.sp,
+                        modifier = Modifier
+                            .padding(start = 8.dp),
+                        style = TextStyle(fontWeight = FontWeight(800))
                     )
                     Text(
                         text = user.location,
-                        fontSize = 14.sp
+                        fontFamily = ralewayRegular,
+                        color = Purple,
+                        fontSize = 12.sp,
+                        modifier = Modifier
+                            .padding(start = 8.dp, top = 6.dp),
+                        style = TextStyle(fontWeight = FontWeight(400))
                     )
                 }
             }
@@ -68,7 +82,7 @@ fun PostWidget(
                     Icon(
                         painter = painterResource(R.drawable.ic_save),
                         contentDescription = "Like Icon",
-                        tint = Color.Black,
+                        tint = LightPurple,
                         modifier = Modifier.size(25.dp)
                     )
                 }
@@ -76,6 +90,7 @@ fun PostWidget(
                     Icon(
                         painter = painterResource(R.drawable.ic_more),
                         contentDescription = "More Options",
+                        tint = LightPurple,
                         modifier = Modifier.rotate(90f) // Rotate only the Icon by 90 degrees
                     )
                 }
@@ -85,8 +100,8 @@ fun PostWidget(
         Image(
             modifier = Modifier
                 .fillMaxWidth()
-                .padding(16.dp) // Adjust the padding as needed
-                .clip(RoundedCornerShape(16.dp)), // Adjust the corner radius as needed
+                .padding(25.dp) // Adjust the padding as needed
+                .clip(RoundedCornerShape(20.dp)), // Adjust the corner radius as needed
             painter = user.postPic,
             contentDescription = "Post Picture",
             contentScale = ContentScale.FillWidth
@@ -104,27 +119,39 @@ fun PostWidget(
                         Icon(
                             painter = painterResource(R.drawable.ic_like_outline),
                             contentDescription = "Like Icon",
-                            tint = Color.Black,
-                            modifier = Modifier.size(25.dp)
+                            tint = LightPurple,
+                            modifier = Modifier.size(28.dp)
                         )
                     }
+                Text(
+                    text = user.likeCount.toString(),
+                    color = LightPurple,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(start = 4.dp)
+                )
                     IconButton(onClick = { /*TODO*/ }) {
                         Icon(
                             painter = painterResource(R.drawable.ic_comment),
                             contentDescription = "Like Icon",
-                            tint = Color.Black,
-                            modifier = Modifier.size(30.dp)
+                            tint = LightPurple,
+                            modifier = Modifier.size(28.dp)
                         )
                     }
-
-
+                Text(
+                    text = user.commentCount.toString(),
+                    color = LightPurple,
+                    fontSize = 16.sp,
+                    fontWeight = FontWeight.Bold,
+                    modifier = Modifier.padding(start = 4.dp)
+                )
             }
             IconButton(onClick = { /*TODO*/ }) {
                 Icon(
-                    painter = painterResource(R.drawable.ic_send),
+                    painter = painterResource(R.drawable.ic_share),
                     contentDescription = "Like Icon",
-                    tint = Color.Black,
-                    modifier = Modifier.size(25.dp)
+                    tint = LightPurple,
+                    modifier = Modifier.size(21.dp)
                 )
             }
 
@@ -162,12 +189,12 @@ fun PostWidget(
 fun PostWidgetPrev() {
     PostWidget(
         user = User(
-            profilePic = painterResource(R.drawable.jon_snow),
-            username = "jon_snow",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.jon_snow_post),
+            profilePic = painterResource(R.drawable.user1),
+            username = "Cranberry Pie",
+            location = "Jakarta, Indonesia",
+            postPic = painterResource(R.drawable.post1),
             likeCount = 168,
-            caption = "Hey Guy's, checkout my new post",
+            caption = "Afternoon Tea with some Lovely Muffin. Comment if you want to know more about the other dessert recipe. I can also give you the full courses about baking.",
             commentCount = 15,
             commentTime = "1h ago"
         )
