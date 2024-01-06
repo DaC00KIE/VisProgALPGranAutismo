@@ -19,7 +19,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
+import com.example.visprogalp_granautismo.ui.theme.Purple
 import com.synac.instagramuipractice.model.User
+import com.synac.instagramuipractice.recipe_section.ralewayBold
 
 @Composable
 fun PostWidget2(
@@ -52,8 +54,10 @@ fun PostWidget2(
             ) {
                 Text(
                     text = user.username,
-                    fontWeight = FontWeight.Bold,
-                    fontSize = 25.sp
+                    fontFamily = ralewayBold,
+                    color = Purple,
+                    fontSize = 14.sp,
+                    fontWeight = FontWeight(800),
                 )
             }
             Row(
@@ -72,12 +76,17 @@ fun PostWidget2(
                     ) {
                         Text(
                             text = user.username,
-                            fontWeight = FontWeight.Bold,
-                            fontSize = 18.sp
+                            fontFamily = ralewayBold,
+                            color = Purple,
+                            fontSize = 14.sp,
+                            fontWeight = FontWeight(800),
                         )
                         Text(
                             text = user.location,
-                            fontSize = 14.sp
+                            fontFamily = ralewayBold,
+                            color = Purple,
+                            fontSize = 12.sp,
+                            fontWeight = FontWeight(800),
                         )
                     }
                     Spacer(modifier = Modifier.width(10.dp))
@@ -183,13 +192,14 @@ fun PostWidget2(
 fun PostWidgetPrev2() {
     PostWidget2(
         user = User(
-            profilePic = painterResource(R.drawable.jon_snow),
-            username = "jon_snow",
+            profilePic = painterResource(R.drawable.user1),
+            username = "CranberryPie",
             location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.jon_snow_post),
+            postPic = painterResource(R.drawable.post1),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "30m ago",
         )
     )
 }

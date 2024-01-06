@@ -56,7 +56,8 @@ fun Profile() {
             postPic = painterResource(R.drawable.jon_snow_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "30m ago",
         )
     )
 

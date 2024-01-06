@@ -27,10 +27,17 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
+import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
+import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
+import com.example.visprogalp_granautismo.ui.theme.LightPurple
 import com.synac.instagramuipractice.model.User
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -41,77 +48,85 @@ fun Explore() {
 
     val users = listOf(
         User(
-            profilePic = painterResource(R.drawable.jon_snow),
-            username = "jon_snow",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.jon_snow_post),
+            profilePic = painterResource(R.drawable.user1),
+            username = "Cranberry Pie",
+            location = "2 days ago",
+            postPic = painterResource(R.drawable.post1),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "30m ago",
         ),
         User(
-            profilePic = painterResource(R.drawable.arya_stark),
-            username = "arya_stark",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.arya_stark_post),
+            profilePic = painterResource(R.drawable.image21),
+            username = "Vanilla Ice",
+            location = "6 days ago",
+            postPic = painterResource(R.drawable.image45),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "20m ago",
         ),
 
         User(
-            profilePic = painterResource(R.drawable.bran_stark),
-            username = "bran_stark",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.bran_stark_post),
+            profilePic = painterResource(R.drawable.image19),
+            username = "CookiesMilky",
+            location = "4 days ago",
+            postPic = painterResource(R.drawable.image47),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 12,
+            commentTime = "10m ago",
         ),
         User(
-            profilePic = painterResource(R.drawable.daenerys_targaryen),
-            username = "queen_daenerys",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.daenerys_targaryen_post),
+            profilePic = painterResource(R.drawable.image21),
+            username = "Marshmellow",
+            location = "3 days ago",
+            postPic = painterResource(R.drawable.post1),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "30m ago",
         ),
         User(
-            profilePic = painterResource(R.drawable.jorah_mormont),
-            username = "jorah_m",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.jorah_mormont_post),
+            profilePic = painterResource(R.drawable.user1),
+            username = "Cranberry Pie2",
+            location = "5 days ago",
+            postPic = painterResource(R.drawable.post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "40m ago",
         ),
         User(
-            profilePic = painterResource(R.drawable.rob_stark),
-            username = "robb_stark",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.robb_stark_post),
+            profilePic = painterResource(R.drawable.image19),
+            username = "SuperCream",
+            location = "9 days ago",
+            postPic = painterResource(R.drawable.post1),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "30m ago",
         ),
         User(
-            profilePic = painterResource(R.drawable.sansa_stark),
-            username = "sansa_stark",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.sansa_stark_post),
+            profilePic = painterResource(R.drawable.image21),
+            username = "WaffleChoco",
+            location = "7 days ago",
+            postPic = painterResource(R.drawable.image45),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "50m ago",
         ),
         User(
-            profilePic = painterResource(R.drawable.tyrian_lannister),
-            username = "tyrian_lan",
-            location = "Accra, Ghana",
-            postPic = painterResource(R.drawable.tyrian_lannister_post),
+            profilePic = painterResource(R.drawable.user1),
+            username = "Yupi",
+            location = "8 days ago",
+            postPic = painterResource(R.drawable.post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "25m ago",
         )
     )
 
@@ -165,17 +180,31 @@ fun TopBar(searchQuery: String, onSearchQueryChange: (String) -> Unit) {
                     .fillMaxWidth()
                     .background(MaterialTheme.colorScheme.surface)
                     .padding(8.dp)
-                    .clip(RoundedCornerShape(16.dp))
+                    .clip(RoundedCornerShape(30.dp))
                     .background(MaterialTheme.colorScheme.primary),
 
                 leadingIcon = {
                     Icon(
-                        imageVector = Icons.Default.Search,
-                        contentDescription = "Search Icon"
+                        painter = painterResource(R.drawable.search),
+                        tint = LightPurple,
+                        contentDescription = "Search Icon",
+                        modifier = Modifier
+                            .padding(start = 10.dp)
+                            .size(25.dp)
                     )
                 },
                 placeholder = {
-                    Text(text = "Search for captions...")
+                    Text(
+                        text = "Search",
+                        style = TextStyle(
+                            fontSize = 18.sp,
+                            lineHeight = 17.51.sp,
+                            fontFamily = FontFamily(Font(R.font.raleway_bold)),
+                            fontWeight = FontWeight(600),
+                            color = Color(0xFF65598E),
+                            textAlign = TextAlign.Center,
+                        )
+                    )
                 }
             )
         }
