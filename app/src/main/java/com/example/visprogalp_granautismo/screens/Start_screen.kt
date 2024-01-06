@@ -18,6 +18,7 @@ import androidx.navigation.NavHostController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.components.ButtonComponent
 import com.example.visprogalp_granautismo.navigation.Home
+import com.example.visprogalp_granautismo.navigation.Notification
 
 @Composable
 fun StartScreen(

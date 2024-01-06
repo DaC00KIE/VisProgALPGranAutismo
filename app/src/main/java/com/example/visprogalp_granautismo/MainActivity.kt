@@ -16,6 +16,7 @@ import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.navigation.MainNavigation
 import com.example.visprogalp_granautismo.screens.ChatScreen
 import com.example.visprogalp_granautismo.screens.HomeScreen
+import com.example.visprogalp_granautismo.screens.NotificationScreen
 import com.example.visprogalp_granautismo.ui.theme.VisProgALPGranAutismoTheme
 
 class MainActivity : ComponentActivity() {
@@ -47,6 +48,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     VisProgALPGranAutismoTheme {
-        MainNavigation()
+MainNavigation()
     }
 }

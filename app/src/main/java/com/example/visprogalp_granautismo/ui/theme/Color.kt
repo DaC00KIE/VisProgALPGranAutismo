@@ -7,7 +7,7 @@ val SuperLightPinkBG = Color(0xFFFDE5E8)
 
 val DarkPinkBG = Color(0xFFD3A7AC)
 val DarkLightPinkBG = Color(0xFFEED1D4)
-
+val ChatPurpleNigg = Color(0xFF65598E)
 val LightGrayFont = Color(0xFF9C9C9C)
 
 val LightPurple = Color(0x8065598E)

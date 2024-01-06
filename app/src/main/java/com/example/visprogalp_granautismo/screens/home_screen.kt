@@ -1,7 +1,5 @@
 package com.example.visprogalp_granautismo.screens
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -29,15 +27,24 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.res.stringResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.components.IconComponentDrawable
 import com.example.visprogalp_granautismo.components.SpacerHeight
 import com.example.visprogalp_granautismo.components.SpacerWidth
 import com.example.visprogalp_granautismo.data.personList
 import com.example.visprogalp_granautismo.navigation.Chat
+import com.example.visprogalp_granautismo.navigation.Notification
+import com.example.visprogalp_granautismo.ui.theme.ChatPurpleNigg
+import com.example.visprogalp_granautismo.ui.theme.LightGrayFont
+import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
+import com.example.visprogalp_granautismo.ui.theme.Purple
+import com.example.visprogalp_granautismo.ui.theme.Purple500
+import com.example.visprogalp_granautismo.ui.theme.Purple700
 
 @Composable
 fun HomeScreen(
@@ -47,7 +54,7 @@ fun HomeScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.White)
+            .background(LightPinkBG)
     ) {
 
         Column(
@@ -56,19 +63,7 @@ fun HomeScreen(
                 .padding(top = 30.dp)
         ) {
             Header()
-            Box(
-                modifier = Modifier
-                    .fillMaxSize()
-                    .background(Color.White)
-                    .clip(
-                        RoundedCornerShape(
-                            topStart = 30.dp, topEnd = 30.dp
-                        )
-                    )
-                    .background(Color.White)
-            ) {
-
-                LazyColumn(modifier = Modifier.padding(top = 30.dp, bottom = 15.dp)) {
+                LazyColumn(modifier = Modifier.padding(top = 10.dp, bottom = 15.dp)) {
                     items(personList, key = { it.id }) {
                         UserEachRow(person = it) {
                             navHostController.currentBackStackEntry?.savedStateHandle?.set(
@@ -79,7 +74,7 @@ fun HomeScreen(
                         }
                     }
                 }
-            }
+
         }
     }
 
@@ -90,17 +85,18 @@ fun Header() {
     Column(
         modifier = Modifier
             .fillMaxWidth()
-            .background(Color.White)
+            .background(LightPinkBG)
             .padding(vertical = 1.dp),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
         Box(
             modifier = Modifier
-                .size(23.dp) // Adjust the size of the header box as needed
-                .background(Color.White)
+                .size(28.dp) // Adjust the size of the header box as needed
+                .background(LightPinkBG)
+
         ) {
             Image(
-                painter = painterResource(id = R.drawable.screenshot_2024_01_03_at_00_34_43),
+                painter = painterResource(id = R.drawable.screenshot_2024_01_03_at_00_34_43_removebg_preview),
                 contentDescription = null, // Add content description as needed
                 modifier = Modifier
                     .fillMaxWidth()
@@ -126,31 +122,33 @@ fun UserEachRow(
             .fillMaxWidth()
             .background(Color.White)
             .clickable { onClick() }
-            .padding(horizontal = 20.dp, vertical = 5.dp)
+            .padding(horizontal = 20.dp, vertical = 10.dp)
     ) {
         Column {
             Row(
                 modifier = Modifier.fillMaxWidth(),
                 horizontalArrangement = Arrangement.SpaceBetween
             ) {
-                Row {
-                    IconComponentDrawable(icon = person.icon, size = 60.dp)
+                Row(
+
+                ) {
+                    IconComponentDrawable(icon = person.icon, size = 60.dp , modifier = Modifier.clip(RoundedCornerShape(50)))
                     SpacerWidth()
                     Column {
-                        Text(
+                        Text(modifier = Modifier.padding(horizontal = 5.dp),
                             text = person.name,
                             style = TextStyle(
-                                color = Color.Black,
+                                color = ChatPurpleNigg,
                                 fontSize = 16.sp,
-                                fontWeight = FontWeight.Bold
+                                fontWeight = FontWeight.Bold,
                             )
                         )
                         SpacerHeight(5.dp)
                         Text(
                             stringResource(R.string.okay), style = TextStyle(
-                                color = Gray,
+                                color = ChatPurpleNigg,
                                 fontSize = 14.sp,
-                            )
+                            ),modifier = Modifier.padding(horizontal = 5.dp),
                         )
                     }
                 }
@@ -166,4 +164,10 @@ fun UserEachRow(
         }
     }
 
+}
+@Preview(showBackground = true)
+@Composable
+fun preview() {
+    val navHostController = rememberNavController() // Assuming you are using Navigation component
+    HomeScreen(navHostController = navHostController)
 }
