@@ -34,7 +34,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.jon_snow_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "1h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.arya_stark),
@@ -43,7 +44,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.arya_stark_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "2h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.bran_stark),
@@ -52,7 +54,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.bran_stark_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "3h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.daenerys_targaryen),
@@ -61,7 +64,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.daenerys_targaryen_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "1h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.jorah_mormont),
@@ -70,7 +74,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.jorah_mormont_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "1h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.rob_stark),
@@ -79,7 +84,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.robb_stark_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "5h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.sansa_stark),
@@ -88,7 +94,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.sansa_stark_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "1h ago"
         ),
         User(
             profilePic = painterResource(R.drawable.tyrian_lannister),
@@ -97,7 +104,8 @@ fun MainFeedScreen() {
             postPic = painterResource(R.drawable.tyrian_lannister_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "2h ago"
         )
     )
 

@@ -11,10 +11,7 @@ val DarkLightPinkBG = Color(0xFFEED1D4)
 val LightGrayFont = Color(0xFF9C9C9C)
 
 val LightPurple = Color(0x8065598E)
-val Purple = Color(0xFF968BBD)
-val Purple200 = Color(0xFFBB86FC)
-val Purple500 = Color(0xFF6200EA)
-val Purple700 = Color(0xFF3700B3)
-val Teal200 = Color(0xFF03DAC5)
+val Purple = Color(0xFF64588D)
+
 
 

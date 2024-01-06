@@ -83,7 +83,8 @@ fun StoryWidgetPrev() {
             postPic = painterResource(R.drawable.daenerys_targaryen_post),
             likeCount = 168,
             caption = "Hey Guy's, checkout my new post",
-            commentCount = 15
+            commentCount = 15,
+            commentTime = "1h ago"
         )
     )
 }
