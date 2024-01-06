@@ -22,6 +22,7 @@ import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.ui.theme.Purple
 import com.synac.instagramuipractice.model.User
 import com.synac.instagramuipractice.recipe_section.ralewayBold
+import com.synac.instagramuipractice.recipe_section.ralewayThin
 
 @Composable
 fun PostWidget2(
@@ -83,10 +84,12 @@ fun PostWidget2(
                         )
                         Text(
                             text = user.location,
-                            fontFamily = ralewayBold,
+                            fontFamily = ralewayThin,
                             color = Purple,
                             fontSize = 12.sp,
                             fontWeight = FontWeight(800),
+                            modifier = Modifier
+                                .padding(top = 10.dp)
                         )
                     }
                     Spacer(modifier = Modifier.width(10.dp))
