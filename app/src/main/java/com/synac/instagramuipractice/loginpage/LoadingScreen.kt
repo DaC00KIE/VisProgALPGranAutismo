@@ -34,17 +34,9 @@ fun LoadingScreen() {
             .background(LightPinkBG),
         horizontalAlignment = Alignment.CenterHorizontally
     ) {
-        Image(
-            painter = painterResource(id = R.drawable.splash),
-            contentDescription = "splash",
-            contentScale = ContentScale.FillWidth,
-            modifier = Modifier
-                .fillMaxSize()
-        )
         Box(
             modifier = Modifier
                 .fillMaxSize()
-                .zIndex(1f)
         ) {
             Text(
                 text = "99%",
@@ -53,7 +45,7 @@ fun LoadingScreen() {
                     lineHeight = 38.sp,
                     fontFamily = FontFamily(Font(R.font.raleway_bold)),
                     fontWeight = FontWeight(700),
-                    color = Color.Black,
+                    color = Color.White,
                 ),
                 modifier = Modifier.align(Alignment.Center)
             )
