@@ -211,20 +211,18 @@ fun AnotherUser() {
     Column(
         modifier = Modifier.fillMaxWidth()
     ){
-   
+        Spacer(modifier = Modifier.height(450.dp))
         Row (
-            modifier = Modifier
-                .padding(horizontal = 16.dp, vertical = 480.dp),
             horizontalArrangement = Arrangement.spacedBy(30.dp)
         ){
             Button(
                 onClick = { /* Handle button click here */ },
                 modifier = Modifier
-                   
+                    .padding(start = 40.dp)
                     .width(130.dp)
                     .height(50.dp)
                     .background(
-                        color = LightPinkBG,
+                        color = Color(0xFFF7D2D6),
                         shape = RoundedCornerShape(size = 20.dp)
                     )
             ) {
@@ -232,7 +230,7 @@ fun AnotherUser() {
                     Text(
                         text = "Follow",
                         style = TextStyle(
-                            fontSize = 13.sp,
+                            fontSize = 15.sp,
                             fontFamily = FontFamily(Font(R.font.raleway_bold)),
                             fontWeight = FontWeight(800),
                             color = Color(0xFF65598E),
@@ -326,7 +324,7 @@ fun AnotherUser() {
                     }
                     1 -> {
                         Image(
-                            painter = painterResource(id = R.drawable.pp2),
+                            painter = painterResource(id = R.drawable.roll),
                             contentDescription = "Image 2",
                             contentScale = ContentScale.FillBounds,
                             modifier = Modifier
