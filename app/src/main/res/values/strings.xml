@@ -1,3 +1,8 @@
 <resources>
     <string name="app_name">VisProgALP-GranAutismo</string>
+    <string name="get_started">Get Started</string>
+    <string name="okay">Okay</string>
+    <string name="_12_23_pm">12:23 PM</string>
+    <string name="online">Online</string>
+    <string name="type_message">Type Message</string>
 </resources>
