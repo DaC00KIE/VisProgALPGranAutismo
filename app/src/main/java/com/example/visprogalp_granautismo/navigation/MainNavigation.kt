@@ -53,5 +53,5 @@ fun MainNavigation(navHostController: NavHostController) {
 const val Start = "start_screen"
 const val Home = "home_screen"
 const val Chat = "chat_screen"
-const val Main = "MainFeedScreen"
-const val Explore = "Explore"
+const val Main = "main_feed_screen"
+const val Explore = "explore"

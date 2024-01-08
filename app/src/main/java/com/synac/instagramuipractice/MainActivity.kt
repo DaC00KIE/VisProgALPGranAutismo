@@ -22,7 +22,8 @@ import com.synac.instagramuipractice.main_feed_screen.MainFeedScreen
 class MainActivity : ComponentActivity() {
     lateinit var navHostController: NavHostController
 
-    @SuppressLint("SuspiciousIndentation")
+    @OptIn(ExperimentalMaterial3Api::class)
+    @SuppressLint("SuspiciousIndentation", "UnusedMaterial3ScaffoldPaddingParameter")
 
     override fun onCreate(savedInstanceState: Bundle?) {
 
@@ -33,9 +34,7 @@ class MainActivity : ComponentActivity() {
             VisProgALPGranAutismoTheme {
 
                 navHostController = rememberNavController()
-
-                    MainNavigation(navHostController)
-
+                MainNavigation(navHostController)
 
             }
         }

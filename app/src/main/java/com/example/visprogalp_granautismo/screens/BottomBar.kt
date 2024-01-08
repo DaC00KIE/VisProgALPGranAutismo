@@ -47,7 +47,7 @@ fun BottomBar(navHostController: NavHostController) {
             .background(color = LightPinkBG)
     ) {
         NavigationBarItem(
-            selected = true,
+            selected = false,
             onClick = {navHostController.navigate(Main)},
             icon = {
                 Icon(
@@ -77,7 +77,7 @@ fun BottomBar(navHostController: NavHostController) {
         )
         NavigationBarItem(
             selected = false,
-            onClick = { },
+            onClick = {navHostController.navigate(Explore) },
             icon = {
                 Icon(
                     painter = painterResource(R.drawable.create),
@@ -92,7 +92,7 @@ fun BottomBar(navHostController: NavHostController) {
         )
         NavigationBarItem(
             selected = false,
-            onClick = { },
+            onClick = {navHostController.navigate(Explore) },
             icon = {
                 Icon(
                     painter = painterResource(R.drawable.notifications),
@@ -104,7 +104,7 @@ fun BottomBar(navHostController: NavHostController) {
         )
         NavigationBarItem(
             selected = false,
-            onClick = { },
+            onClick = {navHostController.navigate(Explore) },
             icon = {
                 Image(
                     painter = painterResource(R.drawable.pp2),
