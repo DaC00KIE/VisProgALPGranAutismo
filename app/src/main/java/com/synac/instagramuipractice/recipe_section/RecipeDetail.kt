@@ -25,6 +25,7 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.DarkPinkBG
@@ -124,6 +125,6 @@ fun RecipeDetailPreview() {
         RecipeSection(user = user)
         RecipeCategory(categoryIngredients = listOf("Egg", "Flour", "Raspberry", "Sugar"))
         RecipeDetail(user = user)
-        BottomBar()
+        BottomBar(navHostController = rememberNavController())
     }
 }

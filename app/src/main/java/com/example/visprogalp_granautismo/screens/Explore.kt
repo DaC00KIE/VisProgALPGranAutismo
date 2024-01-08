@@ -35,15 +35,17 @@ import androidx.compose.ui.text.style.TextAlign
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
 import com.synac.instagramuipractice.model.User
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
-@Preview(showBackground = true)
+
 @Composable
-fun Explore() {
+fun Explore(navHostController: NavHostController) {
     var searchQuery by remember { mutableStateOf("") }
 
     val users = listOf(
@@ -137,7 +139,7 @@ fun Explore() {
             }
         },
         containerColor = Color.White,
-        bottomBar = { BottomBar() }
+        bottomBar = { BottomBar(navHostController = rememberNavController()) }
     ) { innerPadding ->
         Column(
             modifier = Modifier.padding(innerPadding)
@@ -211,9 +213,3 @@ fun TopBar(searchQuery: String, onSearchQueryChange: (String) -> Unit) {
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun ExplorePreview() {
-    Explore()
-    BottomBar()
-}

@@ -41,6 +41,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
@@ -412,5 +413,5 @@ fun MyProfile() {
 @Composable
 fun MyProfilePreview() {
     MyProfile()
-    BottomBar()
+    BottomBar(navHostController = rememberNavController())
 }

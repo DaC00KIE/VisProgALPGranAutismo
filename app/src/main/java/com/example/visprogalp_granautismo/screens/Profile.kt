@@ -38,6 +38,7 @@ import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 
@@ -64,7 +65,7 @@ fun Profile() {
     Scaffold(
         topBar = { TopBar() },
         containerColor = MaterialTheme.colorScheme.background,
-        bottomBar = { BottomBar() }
+        bottomBar = { BottomBar(navHostController = rememberNavController()) }
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier.padding(innerPadding)

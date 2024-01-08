@@ -16,15 +16,19 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
+import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 
 import com.synac.instagramuipractice.model.User
 
 @OptIn(ExperimentalMaterial3Api::class)
-@Preview(showBackground = true)
 @Composable
-fun MainFeedScreen() {
+
+fun MainFeedScreen(
+
+) {
 
     val users = listOf(
         User(
@@ -112,7 +116,7 @@ fun MainFeedScreen() {
     Scaffold(
         topBar = { TopBar() },
         containerColor = Color.White,
-        bottomBar = { BottomBar() }
+        bottomBar = { BottomBar(navHostController = rememberNavController()) }
     ) { innerPadding ->
         LazyColumn(
             modifier = Modifier.padding(innerPadding)
@@ -132,5 +136,7 @@ fun MainFeedScreen() {
         }
     }
 }
+
+
 
 
