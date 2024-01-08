@@ -180,7 +180,7 @@ fun Following() {
                             .width(130.dp)
                             .height(35.dp)
                             .background(
-                                color = Color(0xFFF7D2D6),
+                                color = Color.Transparent,
                                 shape = RoundedCornerShape(size = 20.dp)
                             )
                     ) {
@@ -190,7 +190,7 @@ fun Following() {
                                 fontSize = 15.sp,
                                 fontFamily = FontFamily(Font(R.font.raleway_bold)),
                                 fontWeight = FontWeight(800),
-                                color = Color(0xFF65598E),
+                                color = Color.White,
                                 textAlign = TextAlign.Center,
                             )
                         )

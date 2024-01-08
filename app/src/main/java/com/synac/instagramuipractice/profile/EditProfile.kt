@@ -21,6 +21,7 @@ import androidx.compose.material3.Divider
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
+import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.material3.TopAppBar
 import androidx.compose.runtime.Composable
@@ -38,7 +39,9 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
+import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
+import com.example.visprogalp_granautismo.ui.theme.Purple
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
@@ -105,6 +108,29 @@ Column (
                 .height(145.dp)
                 .clip(CircleShape)
         )
+        Box (
+            modifier = Modifier
+                .padding(start = 45.dp, top = 20.dp)
+        ){
+            IconButton(
+                onClick = {
+                    // Handle back button click here
+                },
+                modifier = Modifier
+                    .padding(top = 80.dp, start = 65.dp)
+                    .size(35.dp)
+                    .clip(CircleShape)
+                    .background(LightPinkBG)
+            ) {
+                Icon(
+                    painter = painterResource(id = R.drawable.camera),
+                    tint = Purple,
+                    contentDescription = "Change Profile",
+                    modifier = Modifier
+                        .size(25.dp)
+                )
+            }
+        }
     }
     Box(
         modifier = Modifier
@@ -314,7 +340,7 @@ Column (
             .fillMaxWidth()
             .height(50.dp)
             .background(
-                color = Color(0xFFFFB6C1),
+                color = Color.Transparent,
                 shape = RoundedCornerShape(size = 35.dp)
             )
     ) {
@@ -325,8 +351,10 @@ Column (
                 fontFamily = FontFamily(Font(R.font.raleway_bold)),
                 fontWeight = FontWeight(1000),
                 textAlign = TextAlign.Center,
+                color = Color.White
             ),
         )
+
     }
    }
 }

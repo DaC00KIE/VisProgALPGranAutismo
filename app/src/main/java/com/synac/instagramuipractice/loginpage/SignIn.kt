@@ -216,7 +216,7 @@ fun SignIn() {
                         .width(260.dp)
                         .height(55.dp)
                         .background(
-                            color = Color(0x66D9A3B0),
+                            color = Color.Transparent,
                             shape = RoundedCornerShape(size = 20.dp)
                         )
                 ){
@@ -226,7 +226,7 @@ fun SignIn() {
                             fontSize = 16.sp,
                             fontFamily = FontFamily(Font(R.font.raleway_bold)),
                             fontWeight = FontWeight(800),
-                            color = Color(0xFF65598E),
+                            color = Color.White,
                             textAlign = TextAlign.Center,
                         )
                     )

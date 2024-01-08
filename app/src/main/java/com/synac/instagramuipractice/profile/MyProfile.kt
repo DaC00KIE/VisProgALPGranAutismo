@@ -238,18 +238,24 @@ fun MyProfile() {
                     .width(130.dp)
                     .height(50.dp)
                     .background(
-                        color = Color(0xFFF7D2D6),
+                        color = Color.Transparent,
                         shape = RoundedCornerShape(size = 20.dp)
                     )
             ) {
-
+                Image(
+                    painter = painterResource(id = R.drawable.edit),
+                    contentDescription = "edit user",
+                    contentScale = ContentScale.Fit,
+                    modifier = Modifier
+                        .size(20.dp)
+                )
                 Text(
-                    text = "Follow",
+                    text = "Edit Profile",
                     style = TextStyle(
-                        fontSize = 15.sp,
+                        fontSize = 13.sp,
                         fontFamily = FontFamily(Font(R.font.raleway_bold)),
                         fontWeight = FontWeight(800),
-                        color = Color(0xFF65598E),
+                        color = Color.White,
                         textAlign = TextAlign.Center,
                     ),
 
@@ -263,15 +269,28 @@ fun MyProfile() {
                         .width(130.dp)
                         .height(50.dp)
                         .background(
-                            color = Color(0x80DADADA),
+                            color = Color.Transparent,
                             shape = RoundedCornerShape(size = 20.dp)
                         )
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.follow),
+                        painter = painterResource(id = R.drawable.baseline_bookmark_24),
                         contentDescription = "follow user",
-                        contentScale = ContentScale.Fit
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .size(17.dp)
                     )
+                    Text(
+                        text = "Bookmarks",
+                        style = TextStyle(
+                            fontSize = 12.sp,
+                            fontFamily = FontFamily(Font(R.font.raleway_bold)),
+                            fontWeight = FontWeight(800),
+                            color = Color.White,
+                            textAlign = TextAlign.Center,
+                        ),
+
+                        )
                 }
             }
         }

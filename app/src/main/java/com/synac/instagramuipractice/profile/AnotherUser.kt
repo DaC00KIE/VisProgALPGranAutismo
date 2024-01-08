@@ -17,6 +17,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
+import androidx.compose.ui.graphics.BlendMode
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
@@ -222,21 +223,27 @@ fun AnotherUser() {
                     .width(130.dp)
                     .height(50.dp)
                     .background(
-                        color = Color(0xFFF7D2D6),
+                        color = Color.Transparent,
                         shape = RoundedCornerShape(size = 20.dp)
                     )
             ) {
-
+                Icon(
+                    painter = painterResource(id = R.drawable.follow),
+                    contentDescription = "people user",
+                    modifier = Modifier
+                        .size(20.dp)
+                    )
                     Text(
                         text = "Follow",
                         style = TextStyle(
-                            fontSize = 15.sp,
+                            fontSize = 14.sp,
                             fontFamily = FontFamily(Font(R.font.raleway_bold)),
                             fontWeight = FontWeight(800),
-                            color = Color(0xFF65598E),
+                            color = Color.White,
                             textAlign = TextAlign.Center,
                         ),
-
+                    modifier = Modifier
+                             .padding(start = 10.dp)
                     )
             }
             Column {
@@ -247,14 +254,29 @@ fun AnotherUser() {
                         .width(130.dp)
                         .height(50.dp)
                         .background(
-                            color = Color(0x80DADADA),
+                            color = Color.Transparent,
                             shape = RoundedCornerShape(size = 20.dp)
                         )
                 ) {
                     Image(
-                        painter = painterResource(id = R.drawable.follow),
-                        contentDescription = "follow user",
-                        contentScale = ContentScale.Fit
+                        painter = painterResource(id = R.drawable.baseline_mail_24),
+                        contentDescription = "message",
+                        contentScale = ContentScale.Fit,
+                        modifier = Modifier
+                            .size(20.dp)
+
+                    )
+                    Text(
+                        text = "Message",
+                        style = TextStyle(
+                            fontSize = 12.sp,
+                            fontFamily = FontFamily(Font(R.font.raleway_bold)),
+                            fontWeight = FontWeight(800),
+                            color = Color.White,
+                            textAlign = TextAlign.Center,
+                        ),
+                        modifier = Modifier
+                            .padding(start = 10.dp)
                     )
                 }
             }

@@ -38,6 +38,7 @@ import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
+import com.synac.instagramuipractice.loginpage.NavBar
 import com.synac.instagramuipractice.model.User
 
 @OptIn(ExperimentalMaterial3Api::class, ExperimentalFoundationApi::class)
@@ -215,4 +216,5 @@ fun TopBar(searchQuery: String, onSearchQueryChange: (String) -> Unit) {
 @Composable
 fun ExplorePreview() {
     Explore()
+    NavBar()
 }
