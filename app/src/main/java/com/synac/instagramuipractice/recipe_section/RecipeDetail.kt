@@ -26,6 +26,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
+import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.DarkPinkBG
 import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
 import com.example.visprogalp_granautismo.ui.theme.Purple
@@ -38,7 +39,7 @@ fun RecipeDetail(user: User) {
             .fillMaxWidth()
             .padding(35.dp, 10.dp, 35.dp, 35.dp)
             .clip(shape = RoundedCornerShape(20.dp))
-            .background( Color(0x80F7D2D6))
+            .background(Color(0x80F7D2D6))
     ) {
             Column {
                 Text(
@@ -123,5 +124,6 @@ fun RecipeDetailPreview() {
         RecipeSection(user = user)
         RecipeCategory(categoryIngredients = listOf("Egg", "Flour", "Raspberry", "Sugar"))
         RecipeDetail(user = user)
+        BottomBar()
     }
 }

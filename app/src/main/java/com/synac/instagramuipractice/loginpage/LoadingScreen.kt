@@ -39,7 +39,7 @@ fun LoadingScreen() {
                 .fillMaxSize()
         ) {
             Text(
-                text = "99%",
+                text = "Loading...",
                 style = TextStyle(
                     fontSize = 30.sp,
                     lineHeight = 38.sp,

@@ -31,6 +31,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.visprogalp_granautismo.R
+import com.example.visprogalp_granautismo.main_feed_screen.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
 import com.example.visprogalp_granautismo.ui.theme.Purple
 import com.synac.instagramuipractice.model.User
