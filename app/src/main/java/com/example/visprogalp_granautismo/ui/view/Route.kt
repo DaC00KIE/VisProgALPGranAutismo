@@ -34,11 +34,13 @@ import androidx.compose.ui.input.nestedscroll.nestedScroll
 import androidx.compose.ui.unit.dp
 import androidx.navigation.NavController
 import androidx.navigation.NavDestination.Companion.hierarchy
+import androidx.navigation.NavHost
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
+import com.example.visprogalp_granautismo.ui.view.loginpage.SignIn
 import com.example.visprogalp_granautismo.ui.view.profile.Bookmark
 import com.example.visprogalp_granautismo.ui.view.profile.EditProfile
 import com.example.visprogalp_granautismo.ui.view.profile.Followers
@@ -52,6 +54,7 @@ import kotlinx.coroutines.DelicateCoroutinesApi
 import kotlinx.coroutines.GlobalScope
 import kotlinx.coroutines.launch
 enum class ListScreen() {
+    Login,
     MainFeedScreen,
     Explore,
     home_screen,
@@ -148,10 +151,15 @@ fun Route(
     ) { innerPadding ->
         NavHost(
             navController = navController,
-            startDestination = ListScreen.MainFeedScreen.name,
+            startDestination = ListScreen.Login.name,
             modifier = Modifier
                 .padding(innerPadding)
         ) {
+            composable(ListScreen.Login.name){
+                canNavigate = true
+                SignIn()
+            }
+
             composable(ListScreen.MainFeedScreen.name) {
                 canNavigate = true
 //                val homeViewModel: HomeViewModel = viewModel()

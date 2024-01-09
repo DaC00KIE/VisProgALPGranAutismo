@@ -9,7 +9,7 @@ import retrofit2.http.*
 public interface GranAutismoService {
 
     @POST("login")
-    suspend fun login(@Body user: User): LoginResponse
+    suspend fun login(@Body user: User): APIResponse
     @GET("logout")
     suspend fun logout(@Header("Authorization") token: String)
     @Multipart

@@ -3,6 +3,7 @@ package com.example.visprogalp_granautismo.repository
 
 import android.content.Context
 import android.net.Uri
+import com.example.visprogalp_granautismo.model.APIResponse
 import com.example.visprogalp_granautismo.model.LoginResponse
 import com.example.visprogalp_granautismo.model.Post
 import com.example.visprogalp_granautismo.model.User
@@ -19,9 +20,13 @@ import java.net.HttpURLConnection
 class GranAutismoRepository(private val granAutismoService: GranAutismoService) {
 
     // Auth
-    suspend fun login(email: String, password: String): LoginResponse {
+    suspend fun login(email: String, password: String): String {
         val user = User(email = email, password = password)
-        return granAutismoService.login(user)
+        val result = granAutismoService.login(user)
+        if(result.status.toInt() == HttpURLConnection.HTTP_OK){
+            return result.data as String
+        }
+        return result.message
     }
 
 

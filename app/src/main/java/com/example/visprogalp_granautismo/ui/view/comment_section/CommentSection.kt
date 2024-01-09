@@ -53,13 +53,9 @@ fun CommentSection(user: User) {
                     .padding(start = 12.dp, end = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                Image(
-                    modifier = Modifier
-                        .size(40.dp)
-                        .clip(CircleShape),
-                    painter = LoadImageCustom(user.profilePicture),
-                    contentDescription = "Profile Pic",
-                    contentScale = ContentScale.Crop
+                LoadImageCustom(
+                    url = user.profilePicture,
+                    modifier = Modifier.size(128.dp)
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 Column {
