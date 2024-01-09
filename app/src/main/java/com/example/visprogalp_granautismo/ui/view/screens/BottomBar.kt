@@ -24,7 +24,7 @@ import androidx.navigation.compose.rememberNavController
 
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
-import com.example.visprogalp_granautismo.ui.theme.Explore
+import com.example.visprogalp_granautismo.ui.view.screens.Explore
 
 
 @Composable
