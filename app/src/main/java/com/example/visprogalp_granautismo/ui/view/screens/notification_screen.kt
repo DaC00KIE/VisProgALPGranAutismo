@@ -40,8 +40,10 @@
 //import com.example.visprogalp_granautismo.data.Person
 //
 //import com.example.visprogalp_granautismo.data.personList
+//import com.example.visprogalp_granautismo.model.notification_list
 //
 //import com.example.visprogalp_granautismo.ui.theme.ChatPurpleNigg
+//import com.example.visprogalp_granautismo.model.notification
 //
 //@Composable
 //fun NotificationScreen(

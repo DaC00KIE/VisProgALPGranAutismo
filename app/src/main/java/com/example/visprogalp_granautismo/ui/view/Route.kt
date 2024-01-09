@@ -38,6 +38,7 @@ import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
 import com.example.visprogalp_granautismo.ui.view.profile.MyProfile
+import com.example.visprogalp_granautismo.ui.view.screens.ChatScreen
 import com.example.visprogalp_granautismo.ui.view.screens.Explore
 import com.example.visprogalp_granautismo.ui.view.screens.HomeScreen
 import com.example.visprogalp_granautismo.ui.view.screens.MainFeedScreen
@@ -156,6 +157,10 @@ fun Route(
             composable(ListScreen.MyProfile.name) {
                 canNavigate = true
                 MyProfile()
+            }
+            composable(ListScreen.chat_screen.name) {
+                canNavigate = true
+                ChatScreen(navController)
             }
 
 //            composable(ListScreen.SignIn.name) {

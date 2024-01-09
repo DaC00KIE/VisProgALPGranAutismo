@@ -1,7 +1,5 @@
 package com.example.visprogalp_granautismo.ui.view.screens
 
-import android.os.Build
-import androidx.annotation.RequiresApi
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
@@ -75,7 +73,7 @@ fun HomeScreen(
                                 "data",
                                 it
                             )
-                            navHostController.navigate("Chat")
+                            navHostController.navigate("chat_screen")
                         }
                     }
                 }
