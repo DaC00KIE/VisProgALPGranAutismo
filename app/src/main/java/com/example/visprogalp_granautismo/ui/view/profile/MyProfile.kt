@@ -41,6 +41,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
+import androidx.navigation.NavHostController
 import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
@@ -48,7 +49,7 @@ import com.example.visprogalp_granautismo.ui.theme.Purple
 import com.example.visprogalp_granautismo.ui.view.screens.BottomBar
 
 @Composable
-fun MyProfile() {
+fun MyProfile(  navHostController: NavHostController) {
     Box(
         modifier = Modifier
             .fillMaxWidth()
@@ -234,7 +235,7 @@ fun MyProfile() {
             horizontalArrangement = Arrangement.spacedBy(30.dp)
         ){
             Button(
-                onClick = { /* Handle button click here */ },
+                onClick = { navHostController.navigate("EditProfile") },
                 modifier = Modifier
                     .padding(start = 40.dp)
                     .width(130.dp)
@@ -265,7 +266,7 @@ fun MyProfile() {
             }
             Column {
                 Button(
-                    onClick = { /* Handle button click here */ },
+                    onClick = { navHostController.navigate("Bookmark") },
                     modifier = Modifier
                         .padding(start = 30.dp)
                         .width(130.dp)
@@ -412,6 +413,6 @@ fun MyProfile() {
 @Preview(showBackground = true)
 @Composable
 fun MyProfilePreview() {
-    MyProfile()
+    MyProfile(navHostController = rememberNavController())
     BottomBar(navHostController = rememberNavController())
 }

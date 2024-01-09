@@ -1,5 +1,6 @@
 package com.example.visprogalp_granautismo.ui.view
 
+import CreatePostFeature
 import android.annotation.SuppressLint
 import android.os.Build
 import androidx.annotation.RequiresApi
@@ -7,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material.icons.Icons
+import androidx.compose.material.icons.outlined.Add
 import androidx.compose.material.icons.outlined.Home
 import androidx.compose.material.icons.outlined.MailOutline
 import androidx.compose.material.icons.outlined.Person
@@ -37,6 +39,10 @@ import androidx.navigation.compose.composable
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
+import com.example.visprogalp_granautismo.ui.view.profile.Bookmark
+import com.example.visprogalp_granautismo.ui.view.profile.EditProfile
+import com.example.visprogalp_granautismo.ui.view.profile.Followers
+import com.example.visprogalp_granautismo.ui.view.profile.Following
 import com.example.visprogalp_granautismo.ui.view.profile.MyProfile
 import com.example.visprogalp_granautismo.ui.view.screens.ChatScreen
 import com.example.visprogalp_granautismo.ui.view.screens.Explore
@@ -51,6 +57,12 @@ enum class ListScreen() {
     home_screen,
     MyProfile,
     chat_screen,
+    AnotherUSer,
+    EditProfile,
+    Bookmark,
+    Following,
+    Followers,
+    CreatePostFeature
     
 
 }
@@ -58,6 +70,7 @@ enum class ListScreen() {
 sealed class BottomNavBar(var menu: String, var icon: ImageVector, var route: String) {
     object MainFeedScreen : BottomNavBar("Home", Icons.Outlined.Home, ListScreen.MainFeedScreen.name)
     object Explore : BottomNavBar("Weekly", Icons.Outlined.Search, ListScreen.Explore.name)
+    object CreatePostFeature : BottomNavBar("Weekly", Icons.Outlined.Add, ListScreen.CreatePostFeature.name)
     object home_screen : BottomNavBar("Group", Icons.Outlined.MailOutline, ListScreen.home_screen.name)
     object MyProfile : BottomNavBar("Urgency", Icons.Outlined.Person, ListScreen.MyProfile.name)
 }
@@ -70,6 +83,7 @@ fun BottomNavBar(navController: NavController) {
     val items = listOf(
         BottomNavBar.MainFeedScreen,
         BottomNavBar.Explore,
+        BottomNavBar.CreatePostFeature,
         BottomNavBar.home_screen,
         BottomNavBar.MyProfile
     )
@@ -156,11 +170,32 @@ fun Route(
             }
             composable(ListScreen.MyProfile.name) {
                 canNavigate = true
-                MyProfile()
+                MyProfile(navController)
             }
             composable(ListScreen.chat_screen.name) {
                 canNavigate = true
                 ChatScreen(navController)
+            }
+            composable(ListScreen.EditProfile.name) {
+                canNavigate = true
+                EditProfile()
+            }
+            composable(ListScreen.Bookmark.name) {
+                canNavigate = true
+                Bookmark()
+            }
+            composable(ListScreen.Followers.name) {
+                canNavigate = true
+                Followers()
+            }
+            composable(ListScreen.Following.name) {
+                canNavigate = true
+                Following()
+            }
+            composable(ListScreen.CreatePostFeature.name) {
+                canNavigate = true
+
+                CreatePostFeature()
             }
 
 //            composable(ListScreen.SignIn.name) {
