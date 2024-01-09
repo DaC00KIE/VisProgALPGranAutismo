@@ -17,6 +17,7 @@ import androidx.compose.ui.unit.dp
 import androidx.navigation.NavHostController
 import com.example.visprogalp_granautismo.R
 import com.example.visprogalp_granautismo.components.ButtonComponent
+import com.example.visprogalp_granautismo.ui.theme.Home
 
 
 @Composable
@@ -47,7 +48,7 @@ fun StartScreen(
                 .padding(20.dp)
                 .align(Alignment.BottomCenter)
         ) {
-            navHostController.navigate("Home")
+            navHostController.navigate(Home)
         }
 
     }

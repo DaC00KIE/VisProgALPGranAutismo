@@ -44,6 +44,10 @@ import com.example.visprogalp_granautismo.components.SpacerWidth
 import com.example.visprogalp_granautismo.data.Chat
 import com.example.visprogalp_granautismo.data.Person
 import com.example.visprogalp_granautismo.data.chatList
+import com.example.visprogalp_granautismo.ui.theme.ChatPurpleNigg
+import com.example.visprogalp_granautismo.ui.theme.DarkLightPinkBG
+import com.example.visprogalp_granautismo.ui.theme.LightPinkBG
+import com.example.visprogalp_granautismo.ui.theme.Purple
 
 @Composable
 fun ChatScreen(
@@ -57,7 +61,7 @@ fun ChatScreen(
     Box(
         modifier = Modifier
             .fillMaxSize()
-            .background(Color.Black)
+            .background(Color.White)
     ) {
         Column(
             modifier = Modifier.fillMaxSize()
@@ -75,14 +79,13 @@ fun ChatScreen(
                             topEnd = 30.dp
                         )
                     )
-                    .padding(top = 25.dp)
             ) {
 
                 LazyColumn(
                     modifier = Modifier
                         .fillMaxSize()
                         .padding(
-                            start = 15.dp, end = 15.dp, top = 25.dp, bottom = 75.dp
+                            start = 15.dp, end = 15.dp, top =5.dp, bottom = 75.dp
                         )
                 ) {
                     items(chatList,key={it.id}) {
@@ -115,14 +118,14 @@ fun ChatRow(
 
         Box(
             modifier = Modifier.background(
-                if (chat.direction) Color.Red else Color.Yellow, RoundedCornerShape(100.dp)
+                if (chat.direction) Purple else LightPinkBG, RoundedCornerShape(11.dp)
             ),
             contentAlignment = Alignment.Center
         ) {
             Text(
                 text = chat.message, style = TextStyle(
                     fontSize = 15.sp,
-                    color = Color.Black
+                    color = Color.White
                 ),
                 textAlign = TextAlign.End,
                 modifier = Modifier.padding(horizontal = 15.dp, vertical = 8.dp)
@@ -150,25 +153,27 @@ fun TextFieldComponent(
     TextField(
         value = text, onValueChange = onValueChange,
         modifier = modifier.fillMaxWidth(),
-        shape = RoundedCornerShape(160.dp),
+        shape = RoundedCornerShape(20.dp),
         colors = TextFieldDefaults.textFieldColors(
-            containerColor = Color.Gray,
+            containerColor = Purple,
             unfocusedIndicatorColor = Color.Transparent,
             focusedIndicatorColor = Color.Transparent
         ),
         placeholder = {
             Text(
-                text = stringResource(R.string.type_message), style = TextStyle(
+                text = stringResource(R.string.type_message),
+                style = TextStyle(
                     fontSize = 14.sp,
-                    color = Color.Black
-                )
+                    color = Color.Black,
+                ),
+                modifier = Modifier.padding(start = 8.dp) // Adjust the padding as needed
             )
         },
         leadingIcon = {
             IconButtonComponentImageVector(icon = Icons.Default.Add)
         },
         trailingIcon = {
-            IconButtonComponentDrawable(icon = R.drawable.icons8_mic_24)
+            IconButtonComponentDrawable(icon = R.drawable.ic_send)
         }
     )
 }
@@ -179,7 +184,7 @@ fun IconButtonComponentImageVector(
 ) {
     Box(
         modifier = Modifier
-            .background(Color.Yellow, CircleShape)
+            .background(DarkLightPinkBG, CircleShape)
             .size(33.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -193,7 +198,7 @@ fun IconButtonComponentDrawable(
 ) {
     Box(
         modifier = Modifier
-            .background(Color.Yellow, CircleShape)
+            .background(DarkLightPinkBG, CircleShape)
             .size(33.dp),
         contentAlignment = Alignment.Center
     ) {
@@ -218,21 +223,21 @@ fun UserEachRow(
             Column() {
                 Text(
                     text = person.name, style = TextStyle(
-                        color = Color.White,
+                        color = ChatPurpleNigg,
                         fontSize = 16.sp,
                         fontWeight = FontWeight.Bold
                     )
                 )
                 Text(
                     stringResource(R.string.online), style = TextStyle(
-                        color = Color.White,
+                        color = ChatPurpleNigg,
                         fontSize = 14.sp,
                     )
                 )
             }
         }
 
-        IconComponentImageVector(icon = Icons.Default.MoreVert, size = 24.dp, tint = Color.White)
+        IconComponentImageVector(icon = Icons.Default.MoreVert, size = 24.dp, tint = ChatPurpleNigg)
 
     }
 

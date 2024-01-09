@@ -12,3 +12,4 @@ val LightGrayFont = Color(0xFF9C9C9C)
 
 val LightPurple = Color(0x8065598E)
 val Purple = Color(0xFF64588D)
+val ChatPurpleNigg = Color(0xFF65598E)
