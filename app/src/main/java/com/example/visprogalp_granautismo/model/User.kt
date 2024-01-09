@@ -1,14 +1,14 @@
 package com.example.visprogalp_granautismo.model
 
-import androidx.compose.ui.graphics.painter.Painter
-
 data class User(
-    val profilePic: Painter,
-    val username: String,
-    val location: String,
-    val postPic: Painter,
-    val likeCount: Int,
-    val caption: String,
-    val commentCount: Int,
-    val commentTime: String
+    val name: String = "",
+    val email: String = "",
+    val email_verified_at: String = "", // Nullable timestamp
+    val password: String= "",
+    val bio: String = "", // Nullable text
+    val location: String = "", // Nullable string
+    val display_name: String = "",
+    val tag_name: String = "",
+    val profile_picture: String = "" // Nullable string
 )
+{}

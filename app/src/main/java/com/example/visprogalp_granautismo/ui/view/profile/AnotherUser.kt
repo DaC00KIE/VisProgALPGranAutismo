@@ -3,7 +3,17 @@ package com.example.visprogalp_granautismo.ui.view.profile
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
 import androidx.compose.foundation.clickable
-import androidx.compose.foundation.layout.*
+import androidx.compose.foundation.layout.Arrangement
+import androidx.compose.foundation.layout.Box
+import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Row
+import androidx.compose.foundation.layout.Spacer
+import androidx.compose.foundation.layout.fillMaxHeight
+import androidx.compose.foundation.layout.fillMaxWidth
+import androidx.compose.foundation.layout.height
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
+import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.lazy.grid.GridCells
 import androidx.compose.foundation.lazy.grid.LazyVerticalGrid
 import androidx.compose.foundation.shape.CircleShape
@@ -29,9 +39,7 @@ import androidx.compose.ui.text.style.TextOverflow
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import androidx.navigation.compose.rememberNavController
 import com.example.visprogalp_granautismo.R
-import com.example.visprogalp_granautismo.ui.view.screens.BottomBar
 import com.example.visprogalp_granautismo.ui.theme.LightPurple
 import com.example.visprogalp_granautismo.ui.theme.Purple
 
@@ -453,5 +461,5 @@ fun AnotherUser() {
 @Composable
 fun AnotherUserPreview() {
         AnotherUser()
-        BottomBar(navHostController = rememberNavController())
+
 }
