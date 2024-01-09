@@ -60,7 +60,7 @@ fun CommentSection(user: User) {
                 Spacer(modifier = Modifier.width(10.dp))
                 Column {
                     Text(
-                        text = user.displayName,
+                        text = "Cherry Pie",
                         fontFamily = ralewayBold,
                         color = Purple,
                         fontSize = 14.sp,
@@ -69,7 +69,7 @@ fun CommentSection(user: User) {
                         style = TextStyle(fontWeight = FontWeight(800))
                     )
                     Text(
-                        text = user.location,
+                        text = "Jakarta",
                         fontFamily = ralewayRegular,
                         color = Purple,
                         fontSize = 12.sp,

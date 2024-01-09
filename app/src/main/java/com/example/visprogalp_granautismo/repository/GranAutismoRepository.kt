@@ -3,8 +3,6 @@ package com.example.visprogalp_granautismo.repository
 
 import android.content.Context
 import android.net.Uri
-import com.example.visprogalp_granautismo.model.APIResponse
-import com.example.visprogalp_granautismo.model.LoginResponse
 import com.example.visprogalp_granautismo.model.Post
 import com.example.visprogalp_granautismo.model.User
 import com.example.visprogalp_granautismo.service.GranAutismoService

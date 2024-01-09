@@ -69,7 +69,7 @@ fun RecipeSection(
                     modifier = Modifier
                         .size(40.dp)
                         .clip(CircleShape),
-                    painter = user.profilePic,
+                    painter = painterResource(R.drawable.mrbeef),
                     contentDescription = "Profile Pic",
                     contentScale = ContentScale.Crop
                 )
@@ -121,7 +121,7 @@ fun RecipeSection(
                 .fillMaxWidth()
                 .padding(25.dp)
                 .clip(RoundedCornerShape(20.dp)),
-            painter = user.postPic,
+            painter = painterResource(R.drawable.post),
             contentDescription = "Post Picture",
             contentScale = ContentScale.FillWidth
         )
