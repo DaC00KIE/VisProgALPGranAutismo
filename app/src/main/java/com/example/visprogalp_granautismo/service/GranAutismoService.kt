@@ -33,6 +33,11 @@ public interface GranAutismoService {
     // User
     @GET("user")
     suspend fun getUser(@Header("Authorization") token: String): Response<User>
+
+    @GET("post")
+    suspend fun getPost(@Header("Authorization") token: String): Response<Post>
+
+
 //    @GET("viewUserDetails/{id}")
 //    suspend fun viewUserDetails(@Header("Authorization") token: String, @Path("id") id: Int): Response <UserResponse>
 //

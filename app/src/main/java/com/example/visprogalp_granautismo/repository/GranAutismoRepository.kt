@@ -4,6 +4,7 @@ package com.example.visprogalp_granautismo.repository
 import android.content.Context
 import android.net.Uri
 import com.example.visprogalp_granautismo.model.LoginResponse
+import com.example.visprogalp_granautismo.model.Post
 import com.example.visprogalp_granautismo.model.User
 import com.example.visprogalp_granautismo.service.GranAutismoService
 import okhttp3.MediaType.Companion.toMediaTypeOrNull
@@ -86,6 +87,9 @@ displayName: String,
     // User
     suspend fun getUser(token: String): Response<User> {
         return granAutismoService.getUser(token)
+    }
+    suspend fun getPost(token: String): Response<Post> {
+        return granAutismoService.getPost(token)
     }
 
 //    suspend fun getUserDetails(token: String, id: Int): Response<UserResponse> {

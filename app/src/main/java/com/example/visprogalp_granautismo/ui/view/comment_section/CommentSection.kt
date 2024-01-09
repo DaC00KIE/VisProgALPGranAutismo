@@ -12,6 +12,7 @@ import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.rotate
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.painterResource
 import androidx.compose.ui.text.TextStyle
@@ -28,9 +29,19 @@ import com.example.visprogalp_granautismo.ui.view.recipe_section.ralewayRegular
 
 @Composable
 fun CommentSection(user: User) {
+
+    fun LoadImageCustom(
+        url: String = user.profilePicture,
+//        modifier = Modifier
+//            .fillMaxSize(),
+//        contentScale = ContentScale.FillWidth
+    ): Painter {
+
+    }
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
+
         Row(
             modifier = Modifier
                 .fillMaxWidth()
@@ -46,14 +57,14 @@ fun CommentSection(user: User) {
                     modifier = Modifier
                         .size(40.dp)
                         .clip(CircleShape),
-                    painter = user.profilePic,
+                    painter = LoadImageCustom(user.profilePicture),
                     contentDescription = "Profile Pic",
                     contentScale = ContentScale.Crop
                 )
                 Spacer(modifier = Modifier.width(10.dp))
                 Column {
                     Text(
-                        text = user.username,
+                        text = user.displayName,
                         fontFamily = ralewayBold,
                         color = Purple,
                         fontSize = 14.sp,
@@ -99,7 +110,7 @@ fun CommentSection(user: User) {
                 .fillMaxWidth()
                 .padding(25.dp) // Adjust the padding as needed
                 .clip(RoundedCornerShape(20.dp)), // Adjust the corner radius as needed
-            painter = user.postPic,
+            painter = LoadImageCustom(user.profilePicture),
             contentDescription = "Post Picture",
             contentScale = ContentScale.FillWidth
         )
