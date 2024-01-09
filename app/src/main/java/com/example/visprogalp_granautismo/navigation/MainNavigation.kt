@@ -16,12 +16,7 @@ import com.example.visprogalp_granautismo.screens.StartScreen
 fun MainNavigation() {
     val navHostController = rememberNavController()
 
-    NavHost(navController = navHostController, startDestination = Start) {
-        composable(Start){
-            StartScreen(
-                navHostController
-            )
-        }
+    NavHost(navController = navHostController, startDestination = Home) {
         composable(Home){
             HomeScreen(
                 navHostController
@@ -37,7 +32,6 @@ fun MainNavigation() {
     }
 
 
-const val Start = "start_screen"
 const val Home = "home_screen"
 const val Chat = "chat_screen"
 const val Notification = "notification_screen"
