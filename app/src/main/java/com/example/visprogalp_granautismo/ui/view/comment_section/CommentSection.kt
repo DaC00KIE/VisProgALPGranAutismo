@@ -30,14 +30,14 @@ import com.example.visprogalp_granautismo.ui.view.recipe_section.ralewayRegular
 @Composable
 fun CommentSection(user: User) {
 
-    fun LoadImageCustom(
-        url: String = user.profilePicture,
+//    fun LoadImageCustom(
+//        url: String = user.profilePicture,
 //        modifier = Modifier
 //            .fillMaxSize(),
 //        contentScale = ContentScale.FillWidth
-    ): Painter {
-
-    }
+//    ): Painter {
+//
+//    }
     Column(
         modifier = Modifier.fillMaxWidth()
     ) {
@@ -53,10 +53,10 @@ fun CommentSection(user: User) {
                     .padding(start = 12.dp, end = 12.dp),
                 verticalAlignment = Alignment.CenterVertically
             ) {
-                LoadImageCustom(
-                    url = user.profilePicture,
-                    modifier = Modifier.size(128.dp)
-                )
+//                LoadImageCustom(
+//                    url = user.profilePicture,
+//                    modifier = Modifier.size(128.dp)
+//                )
                 Spacer(modifier = Modifier.width(10.dp))
                 Column {
                     Text(
@@ -101,15 +101,15 @@ fun CommentSection(user: User) {
             }
         }
 
-        Image(
-            modifier = Modifier
-                .fillMaxWidth()
-                .padding(25.dp) // Adjust the padding as needed
-                .clip(RoundedCornerShape(20.dp)), // Adjust the corner radius as needed
-            painter = LoadImageCustom(user.profilePicture),
-            contentDescription = "Post Picture",
-            contentScale = ContentScale.FillWidth
-        )
+//        Image(
+//            modifier = Modifier
+//                .fillMaxWidth()
+//                .padding(25.dp) // Adjust the padding as needed
+//                .clip(RoundedCornerShape(20.dp)), // Adjust the corner radius as needed
+//            painter = LoadImageCustom(user.profilePicture),
+//            contentDescription = "Post Picture",
+//            contentScale = ContentScale.FillWidth
+//        )
         Image(
             modifier = Modifier
                 .fillMaxWidth()
@@ -139,33 +139,33 @@ fun CommentSection(user: User) {
                     modifier = Modifier.padding(start = 4.dp)
                 )
                 Spacer(modifier = Modifier.width(4.dp))
-                Text(
-                    text = user.commentCount.toString(),
-                    fontFamily = ralewayRegular,
-                    color = LightPurple,
-                    fontSize = 16.sp,
-                    fontWeight = FontWeight.Bold,
-                    modifier = Modifier.padding(start = 4.dp)
-                )
+//                Text(
+//                    text = user.commentCount.toString(),
+//                    fontFamily = ralewayRegular,
+//                    color = LightPurple,
+//                    fontSize = 16.sp,
+//                    fontWeight = FontWeight.Bold,
+//                    modifier = Modifier.padding(start = 4.dp)
+//                )
             }
         }
     }
 }
 
-@Preview(showBackground = true)
-@Composable
-fun CommentSectionPreview() {
-    Column {
-
-        CommentSection(user = User(
-            profilePic = painterResource(R.drawable.user1),
-            username = "Cranberry Pie",
-            location = "Jakarta, Indonesia",
-            postPic = painterResource(R.drawable.post1),
-            likeCount = 168,
-            caption = "Afternoon Tea with some Lovely Muffin. Comment if you want to know more about the other dessert recipe. I can also give you the full courses about baking.",
-            commentCount = 15,
-            commentTime = "1h ago"
-        ))
-    }
-}
+//@Preview(showBackground = true)
+//@Composable
+//fun CommentSectionPreview() {
+//    Column {
+//
+//        CommentSection(user = User(
+//            profilePic = painterResource(R.drawable.user1),
+//            username = "Cranberry Pie",
+//            location = "Jakarta, Indonesia",
+//            postPic = painterResource(R.drawable.post1),
+//            likeCount = 168,
+//            caption = "Afternoon Tea with some Lovely Muffin. Comment if you want to know more about the other dessert recipe. I can also give you the full courses about baking.",
+//            commentCount = 15,
+//            commentTime = "1h ago"
+//        ))
+//    }
+//}

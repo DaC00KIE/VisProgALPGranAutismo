@@ -44,7 +44,7 @@ fun UserComment(user: User) {
             modifier = Modifier
                 .size(40.dp)
                 .clip(CircleShape),
-            painter = user.profilePic,
+            painter = user.profilePicture,
             contentDescription = "Profile Pic",
             contentScale = ContentScale.Crop
         )
