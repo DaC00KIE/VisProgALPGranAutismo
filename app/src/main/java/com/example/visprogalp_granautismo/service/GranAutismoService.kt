@@ -15,14 +15,18 @@ public interface GranAutismoService {
     @Multipart
     @POST("createUser")
     suspend fun register(
-        @Part("username") username: RequestBody,
+
         @Part("email") email: RequestBody,
         @Part("password") password: RequestBody,
         @Part("name") name: RequestBody,
-        @Part("birthdate") birthdate: RequestBody,
-        @Part("description") description: RequestBody,
-        @Part("phone") phone: RequestBody,
-        @Part("gender") gender: RequestBody,
+        @Part("bio") bio: RequestBody,
+
+
+
+        @Part("profilepicture") profilePicture: MultipartBody.Part,
+        @Part("displayname") displayName: RequestBody,
+        @Part("location") location: RequestBody,
+
         @Part file: MultipartBody.Part
     ): APIResponse
 
