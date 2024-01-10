@@ -22,9 +22,9 @@ class GranAutismoContainer() {
         var ACCESS_TOKEN = ""
         var USER_ID = -1
 
-//    private val client = OkHttpClient.Builder()
-//        .addInterceptor(AuthInterceptor(ACCESS_TOKEN))
-//        .build()
+    private val client = OkHttpClient.Builder()
+        .addInterceptor(AuthInterceptor(ACCESS_TOKEN))
+        .build()
     }
     private val BASE_URL = "http://127.0.0.1:8000/api/"
 

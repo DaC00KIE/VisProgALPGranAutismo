@@ -181,12 +181,12 @@ fun SignIn(
                             keyboardType = KeyboardType.Email,
                         ),
                         isEmailValid = isEmailValid,
-                        colorContainer = Color.Black,
-                        colorBorder = Color.Black,
-                        colorCursor = Color.Black,
-                        colorLabel = Color.Black,
-                        colorLabelFocused = Color.Black,
-                        colorBorderFocused = Color.Black
+                        colorBorder = Color(-0x3a1c38),
+                        colorCursor = Color(-0xe864a5),
+                        colorLabel = Color(-0x3a1c38),
+                        colorLabelFocused = Color(-0xe864a5),
+                        colorBorderFocused = Color(-0xe864a5),
+                        colorContainer = Color(-0xe864a5)
                     )
                 }
                 Spacer(modifier = Modifier.height(30.dp))
@@ -220,29 +220,47 @@ fun SignIn(
                         modifier = Modifier
                             .size(25.dp)
                     )
-                    Text(
+                    CustomPasswordField(
+                        value = password,
+                        onValueChanged = { password = it },
                         text = "Password",
-                        style = TextStyle(
-                            fontSize = 14.sp,
-                            fontFamily = FontFamily(Font(R.font.raleway_bold)),
-                            fontWeight = FontWeight(500),
-                            color = Color(0xFF9C9C9C),
-                            textAlign = TextAlign.Center,
+                        keyboardOptions = KeyboardOptions.Default.copy(
+                            keyboardType = KeyboardType.Password
                         ),
                         modifier = Modifier
-                            .padding(top = 5.dp)
+                            .fillMaxWidth()
+                            .padding(horizontal = 16.dp, vertical = 8.dp),
+                        isPasswordValid = isPasswordValid,
+                        colorContainer = Color(0xFFFFFFFF),
+                        colorBorder = Color(0xFFC5E3C8),
+                        colorCursor = Color(0xFF179B5B),
+                        colorLabel = Color(0xFFC5E3C8),
+                        colorLabelFocused = Color(0xFF179B5B),
+                        colorBorderFocused = Color(0xFF179B5B)
                     )
-                    Box(
-                        modifier = Modifier
-                            .padding(start = 140.dp)
-                    ){
-                    Image(
-                        painter = painterResource(id = R.drawable.eyepass),
-                        contentDescription = "eye pass",
-                        contentScale = ContentScale.Fit,
-                        modifier = Modifier
-                            .size(25.dp)
-                    )
+//                    Text(
+//                        text = "Password",
+//                        style = TextStyle(
+//                            fontSize = 14.sp,
+//                            fontFamily = FontFamily(Font(R.font.raleway_bold)),
+//                            fontWeight = FontWeight(500),
+//                            color = Color(0xFF9C9C9C),
+//                            textAlign = TextAlign.Center,
+//                        ),
+//                        modifier = Modifier
+//                            .padding(top = 5.dp)
+//                    )
+//                    Box(
+//                        modifier = Modifier
+//                            .padding(start = 140.dp)
+//                    ){
+//                    Image(
+//                        painter = painterResource(id = R.drawable.eyepass),
+//                        contentDescription = "eye pass",
+//                        contentScale = ContentScale.Fit,
+//                        modifier = Modifier
+//                            .size(25.dp)
+//                    )
                     }
                 }
                 Spacer(modifier = Modifier.height(30.dp))
